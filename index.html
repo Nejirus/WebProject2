@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style/grocerylist.css">
+    <script src="scripts/script.js" defer></script>
+    <title>Grocery List</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="barlink">Shopping List</a>
+      <a href="receipt.html" class="barlink">Receipt</a>
+    </nav>
+    <div class="grocerylist">
+      <h2>Shopping List</h2>
+      <form action="receipt.html">
+        <div class="item">
+          <label for="itemName">Item</label>
+          <input type="text" class="itemName info" name="itemName" placeholder="Item Name" required>
+          <label for="price">$</label>
+          <input type="number" class="price info" name="price" placeholder="Price" min="0" step="any" required>
+          <label for="discount">-%</label>
+          <input type="number" class="discount info" name="discount" placeholder="Discount" min="0" max="100">
+          <label for="quantity">#</label>
+          <input type="number" class="quantity info" name="quantity" placeholder="Quantity" min="1" step="1" value="1" required>
+          <fieldset>
+            <label for="taxable">Taxable?</label>
+            <input type="checkbox" class="taxable" name="taxable" value="taxable">
+          </fieldset>
+          <button type="button" class="remove info">Remove</button>
+        </div>
+        <button type="submit" id="submit">Get Receipt</button>
+      </form>
+      <h3>Total: <span id="Total"></span></h3>
+    </div>
+  </body>
+</html>
