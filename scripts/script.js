@@ -234,6 +234,8 @@ for (let i = 0; i < oldItems.length; ++i) {
 
 }
 
+document.getElementById("Total").innerText = "$" + totalAmount.toFixed(2);
+
 firstItemName.addEventListener("input", isValid);
 firstPrice.addEventListener("input", isValid);
 firstQuantity.addEventListener("input", isValid);
