@@ -209,6 +209,30 @@ function collectData(event) {
 }
 
 
+const myJSON1 = localStorage.getItem('items');
+const myJSON2 = localStorage.getItem('total');
+
+const oldItems = JSON.parse(myJSON1);
+const totalAmount = JSON.parse(myJSON2);
+
+
+for (let i = 0; i < oldItems.length; ++i) {
+  addItem();
+}
+
+const currItems = document.querySelectorAll(".item");
+
+for (let i = 0; i < oldItems.length; ++i) {
+  const currItem = oldItems[i];
+  const currItem2 = currItems[i];
+
+  currItem2.querySelector(".itemName").value = currItem.itemName;
+  currItem2.querySelector(".price").value = currItem.price;
+  currItem2.querySelector(".discount").value = currItem.discount;
+  currItem2.querySelector(".quantity").value = currItem.quantity;
+  currItem2.querySelector(".taxable").value = currItem.taxable;
+
+}
 
 firstItemName.addEventListener("input", isValid);
 firstPrice.addEventListener("input", isValid);
